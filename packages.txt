@@ -1,2 +1,4 @@
 ffmpeg
-libsndfile1
+libsm6
+libxext6
+libgl1-mesa-glx

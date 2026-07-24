@@ -7,7 +7,7 @@ torchaudio>=2.1.2
 torch --extra-index-url https://download.pytorch.org/whl/cpu
 torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
 accelerate>=0.27.2
-
+opencv-python-headless
 transformers>=4.48.0
 qwen-vl-utils>=0.0.8
 pillow>=10.2.0
@@ -16,6 +16,8 @@ av>=11.0.0
 git+https://github.com/m-bain/whisperx.git
 faster-whisper>=1.0.0
 ctranslate2>=4.0.0
+whisperx
+pydub
 
 streamlit>=1.35.0
 pandas>=2.0.0
