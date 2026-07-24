@@ -1,0 +1,12 @@
+# Virtual environment & Caches
+.venv/
+venv/
+__pycache__/
+.vscode/
+
+# Environment secrets
+.env
+
+# Media files
+*.mp4
+"Sample Video.mp4"
