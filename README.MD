@@ -1,5 +1,8 @@
-⚡ Broll Video Understanding Pipeline — Speed Optimization
-🚨 Problem Statement
+Broll Video Understanding Pipeline — Speed Optimization
+
+
+Problem Statement
+
 Before Broll can edit a video, it must first "watch and understand" the input footage. Historically, processing 1 hour of raw footage required ~2 hours of GPU compute time, creating the primary performance bottleneck across the entire editing pipeline.  
 PDF
 + 1
@@ -21,7 +24,6 @@ Rather than guessing, execution profiling was conducted to measure the exact lat
 PDF
 
 Live Profiling Metrics
-Plaintext
 ======================================================================
                          PROFILING METRICS
 ======================================================================
