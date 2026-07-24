@@ -1,8 +1,7 @@
-Broll Video Understanding Pipeline — Speed Optimization
+# ⚡ Broll Video Understanding Pipeline — Speed Optimization
 
 
-Problem Statement
-
+## 🚨 Problem Statement
 Before Broll can edit a video, it must first "watch and understand" the input footage. Historically, processing 1 hour of raw footage required ~2 hours of GPU compute time, creating the primary performance bottleneck across the entire editing pipeline.  
 PDF
 + 1
@@ -19,11 +18,12 @@ PDF
 Editorial Comprehension (LLM): Evaluates footage quality, identifying good takes, bad takes, and key edit moments.  
 PDF
 
-⏱️ Profiling Metrics & Bottleneck Analysis
+## ⏱️ Profiling Metrics & Bottleneck Analysis
 Rather than guessing, execution profiling was conducted to measure the exact latency contribution of each stage.  
 PDF
 
-Live Profiling Metrics
+## Live Profiling Metrics
+
 ======================================================================
                          PROFILING METRICS
 ======================================================================
@@ -33,14 +33,17 @@ Live Profiling Metrics
 ----------------------------------------------------------------------
 TOTAL LATENCY                     :   7.47s  |  100.0%
 ======================================================================
-Key Finding
+
+## Key Finding
+
 Semantic Understanding (Audio) is the primary bottleneck, consuming 52.6% of total execution time (3.93s out of 7.47s).
 
 Context Analysis (Vision) accounts for 31.2% (2.33s).
 
 Editorial Comprehension (LLM) accounts for 16.2% (1.21s).
 
-🛠️ Stack & Optimization Techniques
+## 🛠️ Stack & Optimization Techniques
+
 To optimize the primary bottleneck without degrading editorial output quality, the following architecture was implemented:
 
 Silero VAD (Voice Activity Detection) Gatekeeper: Short-circuits non-speech audio segments prior to hitting heavy CUDA/Whisper transcription models.
@@ -61,25 +64,27 @@ Broll-Video-Faster/
 ├── pipeline_test.py           # Terminal profiling profiler script
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
-⚙️ Installation & Setup
+
+# ⚙️ Installation & Setup
 1. Environment Setup
 PowerShell
-# Clone repository
+## Clone repository
 git clone https://github.com/Sharathweb/Broll-Video-Faster.git
 cd Broll-Video-Faster
 
-# Create and activate virtual environment
+## Create and activate virtual environment
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 
-# Install requirements
+## Install requirements
 pip install -r requirements.txt
 2. Environment Variables
 Create a .env file in the root directory:
 
 Code snippet
 GROQ_API_KEY=your_groq_api_key_here
-🎬 Working with Sample Media
+
+## 🎬 Working with Sample Media
 Large video files (.mp4, .mov) are excluded from Git tracking via .gitignore to prevent repository bloat and transfer timeouts.
 
 Option A: Use Default Sample Video (Sample Video.mp4)
@@ -91,7 +96,7 @@ curl -o "Sample Video.mp4" "https://commondatastorage.googleapis.com/gtv-videos-
 Option B: Upload Custom B-Roll Video
 The Streamlit interface includes an interactive file uploader supporting .mp4, .mov, and .avi files (up to 200MB).
 
-🚀 Running the Benchmarks
+## 🚀 Running the Benchmarks
 1. Executive Dashboard (Streamlit UI)
 Launch the side-by-side visual benchmarking dashboard:
 
