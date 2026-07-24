@@ -4,6 +4,8 @@ groq>=0.9.0
 torch>=2.1.2
 torchvision>=0.16.2
 torchaudio>=2.1.2
+torch --extra-index-url https://download.pytorch.org/whl/cpu
+torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
 accelerate>=0.27.2
 
 transformers>=4.48.0
