@@ -4,18 +4,17 @@
 ## 🚨 Problem Statement
 Before Broll can edit a video, it must first "watch and understand" the input footage. Historically, processing 1 hour of raw footage required ~2 hours of GPU compute time, creating the primary performance bottleneck across the entire editing pipeline.  
 PDF
-+ 1
 
-The video understanding workflow consists of 3 sequential stages:  
+1) The video understanding workflow consists of 3 sequential stages:  
 PDF
 
-Context Analysis (Vision): Identifies scene cuts, visual actions, and on-screen content.  
+2) Context Analysis (Vision): Identifies scene cuts, visual actions, and on-screen content.  
 PDF
 
-Semantic Understanding (Audio): Extracts speech transcripts, tone, and semantic meaning.  
+3) Semantic Understanding (Audio): Extracts speech transcripts, tone, and semantic meaning.  
 PDF
 
-Editorial Comprehension (LLM): Evaluates footage quality, identifying good takes, bad takes, and key edit moments.  
+4) Editorial Comprehension (LLM): Evaluates footage quality, identifying good takes, bad takes, and key edit moments.  
 PDF
 
 ## ⏱️ Profiling Metrics & Bottleneck Analysis
